@@ -17,7 +17,10 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
+    node -v
+    npm -v
     npm install
+    npm cache clean --force
     npm run build
   displayName: 'npm install and build'
 
