@@ -21,21 +21,21 @@ steps:
   displayName: 'npm install and build'
 
 
-- task: ArchiveFiles@2
-  inputs:
-    rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
-    includeRootFolder: false
-    archiveType: 'zip'
-    # archiveFile: '$(Build.ArtifactStagingDirectory)/ZIP/$(Build.BuildId).zip'
-    # archiveFile: '$(Build.BuildId).zip'
-    replaceExistingArchive: true
-  displayName: 'Archieving Files'
+# - task: ArchiveFiles@2
+#   inputs:
+#     rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
+#     includeRootFolder: false
+#     archiveType: 'zip'
+#     # archiveFile: '$(Build.ArtifactStagingDirectory)/ZIP/$(Build.BuildId).zip'
+#     # archiveFile: '$(Build.BuildId).zip'
+#     replaceExistingArchive: true
+#   displayName: 'Archieving Files'
 
 - task: CopyFiles@2
   displayName: 'Copying File to: $(TargetFolder)'
   inputs:
-    SourceFolder: '$(Build.ArtifactStagingDirectory)'
-    Contents: '$(Build.BuildId).zip'
+    # SourceFolder: '$(Build.ArtifactStagingDirectory)'
+    # Contents: '$(Build.BuildId).zip'
     TargetFolder: '$(Build.ArtifactStagingDirectory)\\ArtifactsToBePublished'
 
 - task: PublishBuildArtifacts@1
